@@ -44,6 +44,10 @@ function stripe_checkout_create_checkout_session($request) {
         ['shipping_rate' => $shippingRateUS],
         ['shipping_rate' => $shippingRateINTL],
       ],
+      // Enable automatic tax calculation
+      'automatic_tax' => [
+        'enabled' => true,
+      ],
       'success_url' => home_url('/success'),
       'cancel_url' => home_url('/cancel'),
     ]);
