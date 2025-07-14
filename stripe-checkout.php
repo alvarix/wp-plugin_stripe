@@ -32,7 +32,7 @@ function stripe_checkout_create_checkout_session($request) {
     $session = \Stripe\Checkout\Session::create([
       'mode' => 'payment',
       'line_items' => [[
-        'price' => 'price_1Rf00aKsvaxLGOVJXOc3L0RF', 
+        'price' => 'price_1RklJPKsvaxLGOVJTE53e3YA', 
         // dev
         // 'price' => 'price_1Rf0Iz4IwG1sBeJEmSf3Lbt0', 
         'quantity' => 1,
