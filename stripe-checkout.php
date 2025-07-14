@@ -27,6 +27,7 @@ function stripe_checkout_create_checkout_session($request) {
   $params = $request->get_json_params();
   $shippingRateUS = sanitize_text_field($params['shippingRateUS']);
   $shippingRateINTL = sanitize_text_field($params['shippingRateINTL']);
+  $shippingRateFree = sanitize_text_field($params['shippingRateFree']);
   
   try {
     $session = \Stripe\Checkout\Session::create([
@@ -43,6 +44,7 @@ function stripe_checkout_create_checkout_session($request) {
       'shipping_options' => [
         ['shipping_rate' => $shippingRateUS],
         ['shipping_rate' => $shippingRateINTL],
+        ['shipping_rate' => $shippingRateFree],
       ],
       // Enable automatic tax calculation
       'automatic_tax' => [
